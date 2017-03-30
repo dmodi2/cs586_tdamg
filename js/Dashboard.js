@@ -28,7 +28,7 @@ function load() {
       for (i = 0; i < dataframe.columns.length; i++) {
         var th = document.createElement('TH')
         th.width = '75';
-        th.appendChild(document.createTextNode(dataframe.columns[i].title.id));
+        th.appendChild(document.createTextNode(dataframe.columns[i].title));
         tr.appendChild(th);
       }
 
