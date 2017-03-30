@@ -4,7 +4,7 @@ var DataFrame = dfjs.DataFrame
 function load() {
   DataFrame.fromCSV('data/crdbt.csv').then(
     df => {
-      var myTableDiv = document.getElementById("metric_results")
+      var myTableDiv = document.getElementById("dataset")
       var table = document.createElement('TABLE')
       var tableBody = document.createElement('TBODY')
 
@@ -15,7 +15,7 @@ function load() {
       var columns = new Array();
 
       for (i = 0; i < colsRaw.length; i++) {
-        columns[i] = new Column(colsRaw[i], colsRaw[i], i)
+        columns[i] = new Column(colsRaw[i], map[colsRaw[i]], i)
       }
 
       var data = df.toArray()
@@ -27,7 +27,7 @@ function load() {
       tableBody.appendChild(tr)
       for (i = 0; i < dataframe.columns.length; i++) {
         var th = document.createElement('TH')
-        th.width = '75';
+        th.width = '120';
         th.appendChild(document.createTextNode(dataframe.columns[i].title));
         tr.appendChild(th);
       }
