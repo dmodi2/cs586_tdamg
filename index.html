@@ -1,23 +1,64 @@
+<!DOCTYPE html>
 <html>
+<title>dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://use.fontawesome.com/ed21574494.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../libs/ui-bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<script src="https://cdn.rawgit.com/Gmousse/dataframe-js/master/dist/dataframe-min.js"></script>
+<script src="js/Title.js"></script>
+<script src="js/Column.js"></script>
+<script src="js/Dataframe.js"></script>
+<script src="js/Dashboard.js"></script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey" onload="load();">
 
-<title>
-  FuCk
-</title>
+<div>
 
-<head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <meta content="utf-8" http-equiv="encoding">
-</head>
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Transportation Dashboard</b></h1>
+<div class="row">
+  <div class="col-md-4">
 
-<body onload="load();">
-  <script src="https://cdn.rawgit.com/Gmousse/dataframe-js/master/dist/dataframe-min.js"></script>
-  <script src="js/Column.js"></script>
-  <script src="js/Dataframe.js"></script>
-  <script src="js/Title.js"></script>
-  <script src="js/Dashboard.js"></script>
+  </div>
+  <div class="col-md-4">
+    <select class="form-control">
+      <option value="">Select your dataset</option>
+      <option value="Dataset1">Dataset-1</option>
+      <option value="Dataset2">Dataset-2</option>
+      <option value="Dataset3">Dataset-3</option>
+      <option value="Dataset4">Dataset-4</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+<button type="button" class="btn btn-primary">View</button>
+  </div>
+  <div class="col-md-2">
 
-  <div align="center" id="dataset"></div>
+  </div>
+</div>
+</header>
+
+
+  <div id="dataset" align="center" style ="overflow : scroll; height:400px; width:1000px; padding-left: 400px;"></div>
+
+
+</div>
+
+
+
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
 
 </body>
-
 </html>
