@@ -43,6 +43,47 @@ function load() {
         tableBody.appendChild(tr);
       }
       myTableDiv.appendChild(table)
+
+      //Chart
+      var selectedDf = df.select('day_type','total_rides')
+      var result = selectedDf.groupBy('day_type').aggregate(group => group.stat.sum('total_rides')).rename('DayType', 'TotalRides');
+
+      console.log(result.select('aggregation').toArray())
+
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: result.select('day_type').toArray(),
+          datasets: [{
+            label: 'Total Rides',
+            data: result.select('aggregation').toArray(),
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true,
+                steps: 10,
+                stepValue: result.stat.max('aggregation') / 10,
+                max: result.stat.max('aggregation') * 1.1
+              }
+            }]
+          }
+        }
+      });
     }
   )
 }
