@@ -18,44 +18,81 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
-<body class="w3-light-grey" onload="load();">
+<body class="w3-light-grey">
 
   <div>
     <header class="w3-container w3-center w3-padding-32">
-      <h1><b>Transportation Dashboard</b></h1>
+      <div>
+        <img src="https://leanlogisticsblog.files.wordpress.com/2012/07/truck.jpg" alt="Smiley face" height="81%" width="150px">
+        <h1><b>Transportation Dashboard</b></h1>
+      </div>
       <div class="row">
         <div class="col-md-4">
 
         </div>
         <div class="col-md-4">
-          <select class="form-control">
-            <option value="">Select your dataset</option>
-            <option value="Dataset1">Dataset-1</option>
-            <option value="Dataset2">Dataset-2</option>
-            <option value="Dataset3">Dataset-3</option>
-            <option value="Dataset4">Dataset-4</option>
-          </select>
+          <div width=100px>
+            <select class="form-control">
+              <option selected="selected" value="crdbt">Select Dataset</option>
+              <option value="crdbt">CTA Daily Ridership</option>
+            </select>
+          </div>
         </div>
 
-        <div class="col-md-2">
-          <button type="button" class="btn btn-primary">View</button>
+        <div class="col-md-1">
+          <button type="button" class="btn btn-primary" onClick="load();">View Dataset</button>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1" style="padding-left: 35px">
+          <button type="button" class="btn btn-primary" onClick="visualize();" >Visualize</button>
         </div>
       </div>
     </header>
-    <div id="dataset" align="center" style ="overflow : scroll; height:400px; width:1000px; padding-left: 400px;"></div>
-  </div>
 
-<div>
-  <canvas id="myChart" width="110px" height="50px"></canvas>
+    <div class="row">
+      <div class="col-md-2" style="padding-left: 35px">
+        <div id="chartSelection" style="visibility: hidden; background-color: gainsboro; padding-left: 25px">
+          <p style="font-size: large;">Chart Type</p>
+          <form action="">
+            <input type="radio" name="chart" value="bar"  checked="checked"> Bar<br>
+            <!-- <input type="radio" name="chart" value="pie"> Pie<br>
+            <input type="radio" name="chart" value="donut"> Line<br>
+            <input type="radio" name="chart" value="pivot"> Pivot<br>
+            <input type="radio" name="chart" value="Stacked"> Stacked<br> -->
+          </form>
+
+          <div>
+          </br>
+          <p style="font-size: large;">X-Axis</p>
+          <form action="">
+            <input type="radio" name="day_type" value="day_type"  checked="checked"> Day Type
+          </form>
+        </div>
+        <div>
+        </br>
+        <p style="font-size: large;">Y-Axis</p>
+        <form action="">
+          <input type="radio" name="total_rides" value="total_rides"  checked="checked"> Total Rides
+        </form>
+      </div>
+      <div>
+      </br>
+        <button type="button" class="btn btn-primary" onClick="plotChart();" >Plot Chart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div style="visibility: hidden;" id="dataset-div" align="center" style ="height:500px; width:100%;">
+      <div id="dataset" align="center" style ="overflow : scroll; height:500px; width:600px;"></div>
+    </div>
+    <div>
+      <canvas id="myChart" width="100%" height="100%"></canvas>
+    </div>
+  </div>
 </div>
 
-  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
-
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+</div>
 </body>
 </html>

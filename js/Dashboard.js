@@ -1,7 +1,12 @@
 
 var DataFrame = dfjs.DataFrame
 
+function visualize() {
+  document.getElementById('chartSelection').style.visibility = 'visible'
+}
+
 function load() {
+  document.getElementById('dataset-div').style.visibility = 'visible'
   DataFrame.fromCSV('data/crdbt.csv').then(
     df => {
       var myTableDiv = document.getElementById("dataset")
