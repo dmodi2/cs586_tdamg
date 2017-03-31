@@ -11,25 +11,33 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../libs/ui-bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
 <script src="https://cdn.rawgit.com/Gmousse/dataframe-js/master/dist/dataframe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 <script src="js/Title.js"></script>
 <script src="js/Column.js"></script>
 <script src="js/Dataframe.js"></script>
 <script src="js/Dashboard.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+
 <body class="w3-light-grey">
 
   <div>
     <header class="w3-container w3-center w3-padding-32">
+
       <div>
         <img src="https://leanlogisticsblog.files.wordpress.com/2012/07/truck.jpg" alt="Smiley face" height="81%" width="150px">
-        <h1><b>Transportation Dashboard</b></h1>
+        <h1>
+          <b>Transportation Dashboard</b>
+        </h1>
       </div>
+
       <div class="row">
         <div class="col-md-4">
 
         </div>
+
         <div class="col-md-4">
           <div width=100px>
             <select class="form-control">
@@ -67,32 +75,38 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <input type="radio" name="day_type" value="day_type"  checked="checked"> Day Type
           </form>
         </div>
+
         <div>
         </br>
         <p style="font-size: large;">Y-Axis</p>
         <form action="">
           <input type="radio" name="total_rides" value="total_rides"  checked="checked"> Total Rides
         </form>
+
       </div>
       <div>
       </br>
-        <button type="button" class="btn btn-primary" onClick="plotChart();" >Plot Chart</button>
-      </div>
+      <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
     </div>
   </div>
-  <div class="col-md-10">
-    <div style="visibility: hidden;" id="dataset-div" align="center" style ="height:500px; width:100%;">
-      <div id="dataset" align="center" style ="overflow : scroll; height:500px; width:600px;"></div>
-    </div>
-    <div>
-      <canvas id="myChart" width="100%" height="100%"></canvas>
+</div>
+
+<div class="col-md-10">
+  <div style="visibility: hidden;" id="dataset-div" align="center" style ="height:500px; width:100%;">
+    <div id="dataset" align="center" style ="overflow : scroll; height:500px; width:600px;">
     </div>
   </div>
+  <div style="visibility: hidden;" id="chartDiv">
+    <canvas id="chartArea"></canvas>
+  </div>
+</div>
+
 </div>
 
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 </div>
+
 </body>
 </html>
