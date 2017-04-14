@@ -17,6 +17,7 @@
 <script src="js/Column.js"></script>
 <script src="js/Dataframe.js"></script>
 <script src="js/Dashboard.js"></script>
+<script src="js/main.js"></script>
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -41,15 +42,19 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
         <div class="col-md-4">
           <div width=100px>
-            <select class="form-control">
+            <select class="form-control" id="datasetSelect">
               <option selected="selected" value="crdbt">Select Dataset</option>
-              <option value="crdbt">CTA Daily Ridership</option>
+              <option value="ds1">CTA Daily Ridership</option>
+              <option value="ds2">Ridership by CTA bus</option>
+              <option value="ds3"></option>
+              <option value="ds4"></option>
+              <option value="ds5"></option>
             </select>
           </div>
         </div>
 
         <div class="col-md-1">
-          <button type="button" class="btn btn-primary" onClick="load();">View Dataset</button>
+          <button type="button" class="btn btn-primary" onClick="loadDatasetMain();">View Dataset</button>
         </div>
         <div class="col-md-1" style="padding-left: 35px">
           <button type="button" class="btn btn-primary" onClick="visualize();" >Visualize</button>
