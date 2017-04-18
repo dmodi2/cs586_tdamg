@@ -11,3 +11,12 @@ function loadDatasetMain(){
   var sd = selectDataset.options[selectDataset.selectedIndex].value;
   dashboard.loadDataset(sd)
 }
+
+function plotChart(){
+
+  //Example showing how to use GraphFactory.
+  var chartFac = new GraphFactory("Bar")
+  var selectedGraph = chartFac.getChartInstance()
+  selectedGraph.plotGraph()
+
+}
