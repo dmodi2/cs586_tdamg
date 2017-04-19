@@ -7,7 +7,7 @@ class Dashboard {
     document.getElementById('chartDiv').style.visibility = 'hidden'
 
     var DataFrame = dfjs.DataFrame
-    console.log(selectDataset)
+
     var file
     if(selectDataset == 'ds1'){
       file = "data/crdbt.csv"
@@ -25,7 +25,6 @@ class Dashboard {
       console.log("No file selcted")
     }
 
-    console.log(file)
     DataFrame.fromCSV(file).then(
       df => {
         var myTableDiv = document.getElementById("dataset")
@@ -40,6 +39,7 @@ class Dashboard {
         var i
         var j
         for (i = 0; i < colsRaw.length; i++) {
+          console.log(colsRaw[i])
           columns[i] = new Column(colsRaw[i], map[colsRaw[i]], i)
         }
 
