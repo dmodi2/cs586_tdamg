@@ -39,3 +39,6 @@ map['X COORDINATE'] = 'X Coordinate'
 map['Y COORDINATE'] = 'Y Coordinate'
 
 map['ID '] = "ID"
+
+map['day_type'] = "Day Type"
+map['total_rides'] = "Total Rides"

@@ -70,30 +70,23 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="col-md-2" style="padding-left: 35px">
         <div id="chartSelection" style="visibility: hidden; background-color: gainsboro; padding-left: 25px">
           <p style="font-size: large;">Chart Type</p>
-          <form action="">
-            <input type="radio" name="chart" value="bar"  checked="checked"> Bar<br>
-            <!-- <input type="radio" name="chart" value="pie"> Pie<br>
-            <input type="radio" name="chart" value="donut"> Line<br>
-            <input type="radio" name="chart" value="pivot"> Pivot<br>
-            <input type="radio" name="chart" value="Stacked"> Stacked<br> -->
-          </form>
+          <select class="form-control" id="graph_type" onchange="showCol();" >
+            <option selected="selected" value="crdbt">Select Chart Type</option>
+            <option value="Bar">Bar</<option>
+            <option value="Line">Line</<option>
+            <option value="Stacked">Stacked</<option>
+            <option value="Pivot">Pivot</<option>
+            <option value="Pie">Pie</<option>
+          </select>
 
-          <div>
+        <div id='x_axis_col'>
           </br>
-          <p style="font-size: large;">X-Axis</p>
-          <form action="">
-            <input type="radio" name="day_type" value="day_type"  checked="checked"> Day Type
-          </form>
         </div>
 
-        <div>
+      <div id='y_axis_col'>
         </br>
-        <p style="font-size: large;">Y-Axis</p>
-        <form action="">
-          <input type="radio" name="total_rides" value="total_rides"  checked="checked"> Total Rides
-        </form>
-
       </div>
+
       <div>
       </br>
       <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
