@@ -2,6 +2,7 @@ function visualize() {
   document.getElementById('dataset-div').style.visibility = 'visible'
   document.getElementById('chartSelection').style.visibility = 'visible'
   document.getElementById('chartDiv').style.visibility = 'visible'
+  console.log("in visualize()")
 }
 
 function loadDatasetMain(){
@@ -12,7 +13,7 @@ function loadDatasetMain(){
   dashboard.loadDataset(sd)
 }
 
-function plotChart(){
+function plotChart() {
 
   //get chart param
   var graphType = document.getElementById('graph_type');
@@ -29,7 +30,6 @@ function plotChart(){
   var chartFac = new GraphFactory(graphTypeValue)
   var selectedGraph = chartFac.getChartInstance()
   selectedGraph.plotGraph(x_axis_value, y_axis_value, sd)
-
 }
 
 function showCol(){
