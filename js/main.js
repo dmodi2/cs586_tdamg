@@ -12,7 +12,7 @@ function loadDatasetMain(){
   dashboard.loadDataset(sd)
 }
 
-function plotChart(){
+function plotChart() {
 
   //get chart param
   var graphType = document.getElementById('graph_type');
@@ -29,7 +29,6 @@ function plotChart(){
   var chartFac = new GraphFactory(graphTypeValue)
   var selectedGraph = chartFac.getChartInstance()
   selectedGraph.plotGraph(x_axis_value, y_axis_value, sd)
-
 }
 
 function showCol(){
