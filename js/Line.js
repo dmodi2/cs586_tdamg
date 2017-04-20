@@ -40,7 +40,7 @@ class Line extends Graph {
 	  var a = result.select('aggregation').toArray()
 	  	  
 	  var b=[];
-	  for (i=0;i<a.length;i++)
+	  for (var i=0;i<a.length;i++)
 	  { 
 		b[i] = a[i][0];
       }

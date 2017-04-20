@@ -60,8 +60,8 @@ function showCol(){
   } else if(sc == 'Line'){
 
       if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['service_date']
-        var x_axis_array_text = ['Service Date']
+        var x_axis_array = ['day_type']
+        var x_axis_array_text = ['Day Type']
 
         var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
         var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
