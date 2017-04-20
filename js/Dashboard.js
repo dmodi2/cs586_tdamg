@@ -3,8 +3,8 @@ class Dashboard {
   loadDataset(selectDataset){
 
     document.getElementById('dataset-div').style.visibility = 'visible'
-    document.getElementById('chartSelection').style.visibility = 'hidden'
-    document.getElementById('chartDiv').style.visibility = 'hidden'
+    //document.getElementById('chartSelection').style.visibility = 'hidden'
+    //document.getElementById('chartDiv').style.visibility = 'hidden'
 
     var DataFrame = dfjs.DataFrame
 

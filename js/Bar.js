@@ -6,7 +6,8 @@ class Bar extends Graph {
 
   plotGraph(x_axis, y_axis, selectDataset){
 
-  document.getElementById('dataset-div').style.visibility = 'visible'
+  // document.getElementById('dataset').style.dsiplay = 'none'
+  // document.getElementById('dataset').style.visibility = 'hidden'
   document.getElementById('chartSelection').style.visibility = 'visible'
   document.getElementById('chartDiv').style.visibility = 'visible'
 
@@ -33,15 +34,29 @@ class Bar extends Graph {
     df => {
       //Chart
       var selectedDf = df.select(x_axis, y_axis)
-        console.log(selectedDf.listColumns())
-      var result = selectedDf.groupBy(x_axis).aggregate(group => group.stat.sum(y_axis)).rename(map[x_axis], map[y_axis]);
-
-      console.log(result.listColumns())
-
-      console.log(result.select('aggregation').toArray())
-
+      var result = selectedDf.groupBy(x_axis).aggregate(group => group.stat.sum(y_axis))/*.rename(map[x_axis], map[y_axis]);*/;
       var ctx = document.getElementById("chartArea");
-      //alert('ok')
+      var colorArray = [
+        'rgba(255, 99, 134, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
+      ]
+      var borColorArray = [
+        'rgba(255, 99, 134, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ]
+      var col_count = 0
+      var backgroundColorArray = []
+      var borderColorArray = []
+      for(var i = 0; i < result.count(); i++){
+        backgroundColorArray[i] = colorArray[col_count]
+        borderColorArray[i] = borColorArray[col_count]
+        col_count++
+        if(col_count == 3){
+          col_count = 0
+        }
+      }
       var myChart = new Chart(ctx, {
         type: 'bar',
         options: {
@@ -54,16 +69,8 @@ class Bar extends Graph {
           datasets: [{
             label: 'Total Rides',
             data: result.select('aggregation').toArray(),
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)'
-            ],
+            backgroundColor: backgroundColorArray,
+            borderColor: borderColorArray,
             borderWidth: 1
           }]
         },
