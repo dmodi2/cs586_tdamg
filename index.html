@@ -50,10 +50,10 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <select class="form-control" id="datasetSelect">
               <option selected="selected" value="crdbt">Select Dataset</option>
               <option value="ds1">CTA Daily Ridership</option>
-              <option value="ds2">Ridership by CTA bus route</option>
-              <option value="ds3">Ridership by 'L' route</option>
+              <!-- <option value="ds2">Ridership by CTA bus route</option>
+              <option value="ds3">Ridership by 'L' route</option> -->
               <option value="ds4">Average daily traffic count</option>
-              <option value="ds5">Red Light Camera Violations</option>
+              <!-- <option value="ds5">Red Light Camera Violations</option> -->
               <option value="ds6">Divy Bicycle Stations</option>
             </select>
           </div>
@@ -69,9 +69,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </header>
 
     <div class="row">
-      <div class="col-md-2" style="padding-left: 35px">
-        <div id="chartSelection" style="visibility: hidden; background-color: gainsboro; padding-left: 25px">
-          <p style="font-size: large;">Chart Type</p>
+      <div class="col-md-2" style="padding-left: 50px;">
+        <div id="chartSelection" style="visibility: hidden; height:290px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
+          <p style="font-size: large;" align: "center">Chart Type</p>
           <select class="form-control" id="graph_type" onchange="showCol();" >
             <option selected="selected" value="crdbt">Select Chart Type</option>
             <option value="Bar">Bar</<option>
@@ -81,12 +81,12 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <option value="Pie">Pie</<option>
           </select>
 
-        <div id='x_axis_col'>
-          </br>
+        <div id='x_axis_col' style="visibility: hidden;">
+        </br><label>X-axis</label></br>
         </div>
 
-      <div id='y_axis_col'>
-        </br>
+      <div id='y_axis_col' style="visibility: hidden;">
+      </br><label>Y-axis</label></br>
       </div>
 
       <div>
@@ -101,15 +101,17 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div id="dataset" align="center" style ="overflow : scroll; height:500px; width:600px;">
     </div>
   </div>
-  <div style="visibility: hidden;" id="chartDiv">
-    <canvas id="chartArea"></canvas>
+  <div style="visibility: hidden;" id="chartDiv" align="center" style ="height:500px; width:100%;">
+    <div id="myChart" align="center" style ="overflow : scroll; height:100%; width:600px;">
+      <canvas id="chartArea"></canvas>
+    </div>
   </div>
 </div>
 
 </div>
 
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p>Created by <a href="https://science.iit.edu/computer-science" target="_blank">IIT UML Team 8</a></p>
 </footer>
 </div>
 
