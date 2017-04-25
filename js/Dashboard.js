@@ -1,8 +1,10 @@
 class Dashboard {
 
   loadDataset(selectDataset){
-
+    document.getElementById("dataset").innerHTML = " ";
+    var table = document.createElement('TABLE')
     document.getElementById('dataset-div').style.visibility = 'visible'
+
 
     var DataFrame = dfjs.DataFrame
 
@@ -26,7 +28,6 @@ class Dashboard {
     DataFrame.fromCSV(file).then(
       df => {
         var myTableDiv = document.getElementById("dataset")
-        var table = document.createElement('TABLE')
         var tableBody = document.createElement('TBODY')
 
         table.border = '1'
