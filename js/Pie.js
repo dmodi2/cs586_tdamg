@@ -71,7 +71,10 @@ class Pie extends Graph{
 	options: {
         animation:{
             animateScale:true
-			}
+			},
+			legend:{
+			display:false
+		}
 		}
 	});
 }

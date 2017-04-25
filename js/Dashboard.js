@@ -15,9 +15,9 @@ class Dashboard {
       file = "data/CTA_Ridership_L_Station.csv"
     }*/else if(selectDataset == 'ds4'){
       file = "data/Average_Daily_Traffic_Counts.csv"
-    }/*else if(selectDataset == 'ds5'){
+    }else if(selectDataset == 'ds5'){
       file = "data/Red_Light_Camera_Violations.csv"
-    }*/else if(selectDataset == 'ds6'){
+    }else if(selectDataset == 'ds6'){
       file = "data/Divvy_Bicycle_Stations.csv"
     }else{
       console.log("No file selcted")
