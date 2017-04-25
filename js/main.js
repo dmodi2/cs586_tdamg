@@ -50,12 +50,26 @@ function showCol(){
         var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
         var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
       }
+      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
+        var x_axis_array = ['daytype', 'stationname']
+        var x_axis_array_text = ['Day Type', 'Station Name']
+
+        var y_axis_array = ['rides']
+        var y_axis_array_text = ['Rides']
+      }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
         var x_axis_array = ['Street', 'Traffic Volume Count Location  Address']
         var x_axis_array_text = ['Street', 'Location Address']
 
         var y_axis_array = ['Total Passing Vehicle Volume']
         var y_axis_array_text = ['Total Passing Vehicle Volume']
+      }
+      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
+        var x_axis_array = ['INTERSECTION', 'ADDRESS']
+        var x_axis_array_text = ['Intersection', 'Address']
+
+        var y_axis_array = ['VIOLATIONS']
+        var y_axis_array_text = ['Violations']
       }
       if(sd == 'ds6'/*Divy Stations*/){
         var x_axis_array = ['Station Name', 'Address']
@@ -73,12 +87,26 @@ function showCol(){
         var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
         var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
       }
+      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
+        var x_axis_array = ['daytype', 'stationname']
+        var x_axis_array_text = ['Day Type', 'Station Name']
+
+        var y_axis_array = ['rides']
+        var y_axis_array_text = ['Rides']
+      }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
         var x_axis_array = ['Date of Count']
         var x_axis_array_text = ['Date of Count']
 
         var y_axis_array = ['Total Passing Vehicle Volume']
         var y_axis_array_text = ['Total Passing Vehicle Volume']
+      }
+      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
+        var x_axis_array = ['INTERSECTION', 'ADDRESS']
+        var x_axis_array_text = ['Intersection', 'Address']
+
+        var y_axis_array = ['VIOLATIONS']
+        var y_axis_array_text = ['Violations']
       }
       if(sd == 'ds6'/*Divy Stations*/){
         var x_axis_array = ['Station Name', 'Address']
@@ -95,12 +123,26 @@ function showCol(){
         var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
         var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
       }
+      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
+        var x_axis_array = ['daytype', 'stationname']
+        var x_axis_array_text = ['Day Type', 'Station Name']
+
+        var y_axis_array = ['rides']
+        var y_axis_array_text = ['Rides']
+      }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
         var x_axis_array = ['Street', 'Traffic Volume Count Location  Address']
         var x_axis_array_text = ['Street', 'Location Address']
 
         var y_axis_array = ['Total Passing Vehicle Volume']
         var y_axis_array_text = ['Total Passing Vehicle Volume']
+      }
+      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
+        var x_axis_array = ['INTERSECTION', 'ADDRESS']
+        var x_axis_array_text = ['Intersection', 'Address']
+
+        var y_axis_array = ['VIOLATIONS']
+        var y_axis_array_text = ['Violations']
       }
       if(sd == 'ds6'/*Divy Stations*/){
         var x_axis_array = ['Station Name', 'Address']
@@ -117,51 +159,52 @@ function showCol(){
       }
       if(sd == 'ds6'/*Divy Stations*/){
       }
-  }else if(sc == 'Stacked'){
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['day_type']
-        var x_axis_array_text = ['Day Type']
-
-        var y_axis_array = ['bus', 'rail_boardings']
-        var y_axis_array_text = ['Bus', 'Rail Boardings']
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['Street']
-        var x_axis_array_text = ['Street']
-
-        var y_axis_array = ['Traffic Volume Count Location  Address', 'Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Location Address', 'Rail Total Passing Vehicle Volume']
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-      }
-      var x_axis_col = document.getElementById("x_axis_col")
-      //Create and append select list
-      var selectList = document.createElement("select")
-      selectList.id = "x_axis"
-      x_axis_col.appendChild(selectList)
-      //Create and append the options
-      for (var i = 0; i < x_axis_array.length; i++) {
-        var option = document.createElement("option")
-        option.value = x_axis_array[i]
-        option.text = x_axis_array_text[i]
-        selectList.appendChild(option)
-      }
-
-      var y_axis_col = document.getElementById("y_axis_col")
-
-      for (var i = 0; i < y_axis_array.length; i++) {
-        var br = document.createElement('br')
-        var checkbox = document.createElement('input')
-        checkbox.setAttribute('type', 'checkbox')
-        checkbox.setAttribute('value', y_axis_array[i])
-        checkbox.setAttribute('id', 'y_axis')
-        var text1 = document.createTextNode(' ' + y_axis_array_text[i]);
-        y_axis_col.appendChild(checkbox)
-        y_axis_col.appendChild(text1)
-        y_axis_col.appendChild(br)
-      }
-      return
   }
+  // }else if(sc == 'Stacked'){
+  //     if(sd == 'ds1'/*Daily CTA boarding*/){
+  //       var x_axis_array = ['day_type']
+  //       var x_axis_array_text = ['Day Type']
+  //
+  //       var y_axis_array = ['bus', 'rail_boardings']
+  //       var y_axis_array_text = ['Bus', 'Rail Boardings']
+  //     }
+  //     if(sd == 'ds4'/*Average Daily Traffic count:*/){
+  //       var x_axis_array = ['Street']
+  //       var x_axis_array_text = ['Street']
+  //
+  //       var y_axis_array = ['Traffic Volume Count Location  Address', 'Total Passing Vehicle Volume']
+  //       var y_axis_array_text = ['Location Address', 'Rail Total Passing Vehicle Volume']
+  //     }
+  //     if(sd == 'ds6'/*Divy Stations*/){
+  //     }
+  //     var x_axis_col = document.getElementById("x_axis_col")
+  //     //Create and append select list
+  //     var selectList = document.createElement("select")
+  //     selectList.id = "x_axis"
+  //     x_axis_col.appendChild(selectList)
+  //     //Create and append the options
+  //     for (var i = 0; i < x_axis_array.length; i++) {
+  //       var option = document.createElement("option")
+  //       option.value = x_axis_array[i]
+  //       option.text = x_axis_array_text[i]
+  //       selectList.appendChild(option)
+  //     }
+  //
+  //     var y_axis_col = document.getElementById("y_axis_col")
+  //
+  //     for (var i = 0; i < y_axis_array.length; i++) {
+  //       var br = document.createElement('br')
+  //       var checkbox = document.createElement('input')
+  //       checkbox.setAttribute('type', 'checkbox')
+  //       checkbox.setAttribute('value', y_axis_array[i])
+  //       checkbox.setAttribute('id', 'y_axis')
+  //       var text1 = document.createTextNode(' ' + y_axis_array_text[i]);
+  //       y_axis_col.appendChild(checkbox)
+  //       y_axis_col.appendChild(text1)
+  //       y_axis_col.appendChild(br)
+  //     }
+  //     return
+  // }
 
       var x_axis_col = document.getElementById("x_axis_col")
       //Create and append select list
