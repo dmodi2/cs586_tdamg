@@ -32,8 +32,9 @@ function plotChart() {
 }
 
 function showCol(){
- document.getElementById('x_axis_col').innerHTML = ""
- document.getElementById('y_axis_col').innerHTML = ""
+
+  document.getElementById('x_axis_col').innerHTML = ""
+  document.getElementById('y_axis_col').innerHTML = ""
   document.getElementById('x_axis_col').style.visibility = 'visible'
   document.getElementById('y_axis_col').style.visibility = 'visible'
   //get chart type and dataset type
@@ -43,139 +44,40 @@ function showCol(){
   var sd = selectDataset.options[selectDataset.selectedIndex].value
   var br = document.createElement("br")
 
-  if(sc == 'Bar'){
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['X-Axis', 'day_type']
-        var x_axis_array_text = ['X-Axis', 'Day Type']
+  if(sd == 'ds1'/*Daily CTA boarding*/){
+    var x_axis_array = ['X-Axis', 'day_type']
+    var x_axis_array_text = ['X-Axis', 'Day Type']
 
-        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
-      }
-      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
-        var x_axis_array = ['X-Axis', 'daytype', 'stationname']
-        var x_axis_array_text = ['X-Axis', 'Day Type', 'Station Name']
+    var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
+    var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
+  }
+  if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
+    var x_axis_array = ['X-Axis', 'daytype', 'stationname']
+    var x_axis_array_text = ['X-Axis', 'Day Type', 'Station Name']
 
-        var y_axis_array = ['Y-Axis', 'rides']
-        var y_axis_array_text = ['Y-Axis', 'Rides']
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['X-Axis', 'Street', 'Traffic Volume Count Location  Address']
-        var x_axis_array_text = ['X-Axis', 'Street', 'Location Address']
+    var y_axis_array = ['Y-Axis', 'rides']
+    var y_axis_array_text = ['Y-Axis', 'Rides']
+  }
+  if(sd == 'ds4'/*Average Daily Traffic count:*/){
+    var x_axis_array = ['X-Axis', 'Street', 'Traffic Volume Count Location  Address']
+    var x_axis_array_text = ['X-Axis', 'Street', 'Location Address']
 
-        var y_axis_array = ['Y-Axis', 'Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Y-Axis','Total Passing Vehicle Volume']
-      }
-      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
-        var x_axis_array = ['X-Axis', 'INTERSECTION', 'ADDRESS']
-        var x_axis_array_text = ['X-Axis', 'Intersection', 'Address']
+    var y_axis_array = ['Y-Axis', 'Total Passing Vehicle Volume']
+    var y_axis_array_text = ['Y-Axis','Total Passing Vehicle Volume']
+  }
+  if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
+    var x_axis_array = ['X-Axis', 'INTERSECTION', 'ADDRESS']
+    var x_axis_array_text = ['X-Axis', 'Intersection', 'Address']
 
-        var y_axis_array = ['Y-Axis', 'VIOLATIONS']
-        var y_axis_array_text = ['Y-Axis', 'Violations']
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
-        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
+    var y_axis_array = ['Y-Axis', 'VIOLATIONS']
+    var y_axis_array_text = ['Y-Axis', 'Violations']
+  }
+  if(sd == 'ds6'/*Divy Stations*/){
+    var x_axis_array = ['X-Axis', 'Station Name', 'Address']
+    var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
 
-        var y_axis_array = ['Y-Axis','Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
-      }
-  } else if(sc == 'Line'){
-
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['X-Axis', 'day_type']
-        var x_axis_array_text = ['X-Axis', 'Day Type']
-
-        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
-      }
-      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
-        var x_axis_array = ['X-Axis', 'daytype', 'stationname']
-        var x_axis_array_text = ['X-Axis', 'Day Type', 'Station Name']
-
-        var y_axis_array = ['Y-Axis', 'rides']
-        var y_axis_array_text = ['Y-Axis', 'Rides']
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['X-Axis', 'Date of Count']
-        var x_axis_array_text = ['X-Axis', 'Date of Count']
-
-        var y_axis_array = ['Y-Axis','Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Y-Axis','Total Passing Vehicle Volume']
-      }
-      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
-        var x_axis_array = ['X-Axis', 'INTERSECTION', 'ADDRESS']
-        var x_axis_array_text = ['X-Axis', 'Intersection', 'Address']
-
-        var y_axis_array = ['Y-Axis', 'VIOLATIONS']
-        var y_axis_array_text = ['Y-Axis', 'Violations']
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
-        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
-
-        var y_axis_array = ['Y-Axis', 'Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
-      }
-  }else if(sc == 'Pie'){
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['X-Axis', 'day_type']
-        var x_axis_array_text = ['X-Axis', 'Day Type']
-
-        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
-      }
-      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
-        var x_axis_array = ['X-Axis', 'daytype', 'stationname']
-        var x_axis_array_text = ['X-Axis', 'Day Type', 'Station Name']
-
-        var y_axis_array = ['Y-Axis', 'rides']
-        var y_axis_array_text = ['Y-Axis', 'Rides']
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['X-Axis', 'Street', 'Traffic Volume Count Location  Address']
-        var x_axis_array_text = ['X-Axis', 'Street', 'Location Address']
-
-        var y_axis_array = ['Y-Axis', 'Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Y-Axis', 'Total Passing Vehicle Volume']
-      }
-      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
-        var x_axis_array = ['X-Axis', 'INTERSECTION', 'ADDRESS']
-        var x_axis_array_text = ['X-Axis', 'Intersection', 'Address']
-
-        var y_axis_array = ['Y-Axis', 'VIOLATIONS']
-        var y_axis_array_text = ['Y-Axis', 'Violations']
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
-        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
-
-        var y_axis_array = ['Y-Axis', 'Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
-      }
-  }else if(sc == 'Polar'){
-      //pending
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-      }
-      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-      }
-      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-      }
-  }else if(sc == 'Donut'){
-      //pending
-      if(sd == 'ds1'/*Daily CTA boarding*/){
-      }
-      if(sd == 'ds3'/*CTA_Ridership_L_Station.csv*/){
-      }
-      if(sd == 'ds4'/*Average Daily Traffic count:*/){
-      }
-      if(sd == 'ds5'/*Red_Light_Camera_Violations.csv*/){
-      }
-      if(sd == 'ds6'/*Divy Stations*/){
-      }
+    var y_axis_array = ['Y-Axis','Total Docks', 'Docks in Service']
+    var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
   }
 
       var x_axis_col = document.getElementById("x_axis_col")
