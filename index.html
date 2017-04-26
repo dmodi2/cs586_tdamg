@@ -71,7 +71,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div class="row">
       <div class="col-md-2" style="padding-left: 50px;">
-        <div id="chartSelection" style="visibility: hidden; height:290px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
+        <div id="chartSelection" style="visibility: hidden; height:400px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
           <p style="font-size: large;" align: "center">Chart Type</p>
           <select class="form-control" id="graph_type" onchange="showCol();" >
             <option selected="selected" value="crdbt">Select Chart Type</option>
@@ -98,6 +98,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div>
       </br>
       <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
+    </div>
+    &nbsp; &nbsp;
+    <div>
+
+      <!-- .......drop down of all the columns..... -->
+      <!-- <select class="form-control" id="graph_type" onchange="showCol();" >
+        <option selected="selected" value="crdbt">Select Chart Type</option>
+        <option value="Bar">Bar</<option>
+        <option value="Line">Line</<option>
+        <option value="Stacked">Stacked</<option>
+        <option value="Pivot">Pivot</<option>
+        <option value="Pie">Pie</<option>
+      </select> -->
+    </br>
+    <button type="button" class="btn btn-primary" onClick="plotStats();">Plot Stats</button>
     </div>
   </div>
 </div>
