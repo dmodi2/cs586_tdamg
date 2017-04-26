@@ -28,6 +28,7 @@ function plotChart() {
   //Example showing how to use GraphFactory.
   var chartFac = new GraphFactory(graphTypeValue)
   var selectedGraph = chartFac.getChartInstance()
+  selectedGraph.resetCanvas()
   selectedGraph.plotGraph(x_axis_value, y_axis_value, sd)
 }
 
