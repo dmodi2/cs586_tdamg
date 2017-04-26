@@ -1,4 +1,4 @@
-class Pie extends Graph{
+class Polar extends Graph{
 
 	constructor(file){
     super(file)
@@ -20,9 +20,9 @@ class Pie extends Graph{
 
 
 	  var colorArray = [
-							"#FF6384",
-							"#36A2EB",
-							"#FFCE56"
+        'rgba(255, 99, 134, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
       ]
       var borColorArray = [
         'rgba(255, 99, 134, 1)',
@@ -42,27 +42,42 @@ class Pie extends Graph{
         }
       }
 
-	  var myPieChart = new Chart(ctx,{
-    type: 'pie',
+		var dataSet=[];
+		var a = result.select('aggregation').toArray();
+		for(var i=0;i<a.length;i++)
+		{
+			dataSet[i] = a[i][0];
+		}
+
+	  var myChart = new Chart(ctx,{
+    type: 'polarArea',
     data: {
     labels: result.select(x_axis).toArray(),
     datasets: [
         {
-            data: result.select('aggregation').toArray(),
+            data: dataSet,
             backgroundColor: backgroundColorArray,
             hoverBackgroundColor: borderColorArray
         }]
 	},
 	options: {
+
+
+						elements: {
+							arc:{
+								borderColor: "#000000"
+							}
+						},
+						legend:{
+							display: false
+						},
         animation:{
             animateScale:true
-			},
-			legend:{
-			display:false
-		}
-		}
-	});
-}
-)
 	}
+
+	}
+});
+	}
+)
+}
 }

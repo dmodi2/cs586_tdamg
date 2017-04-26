@@ -1,4 +1,4 @@
-class Pie extends Graph{
+class Doughnut extends Graph{
 
 	constructor(file){
     super(file)
@@ -20,9 +20,9 @@ class Pie extends Graph{
 
 
 	  var colorArray = [
-							"#FF6384",
-							"#36A2EB",
-							"#FFCE56"
+        'rgba(255, 99, 134, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
       ]
       var borColorArray = [
         'rgba(255, 99, 134, 1)',
@@ -42,8 +42,8 @@ class Pie extends Graph{
         }
       }
 
-	  var myPieChart = new Chart(ctx,{
-    type: 'pie',
+	  var myChart = new Chart(ctx,{
+    type: 'doughnut',
     data: {
     labels: result.select(x_axis).toArray(),
     datasets: [
@@ -58,8 +58,8 @@ class Pie extends Graph{
             animateScale:true
 			},
 			legend:{
-			display:false
-		}
+				display: false
+			}
 		}
 	});
 }
