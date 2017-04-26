@@ -32,7 +32,8 @@ function plotChart() {
 }
 
 function showCol(){
-
+ document.getElementById('x_axis_col').innerHTML = ""
+ document.getElementById('y_axis_col').innerHTML = ""
   document.getElementById('x_axis_col').style.visibility = 'visible'
   document.getElementById('y_axis_col').style.visibility = 'visible'
   //get chart type and dataset type
@@ -44,70 +45,70 @@ function showCol(){
 
   if(sc == 'Bar'){
       if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['day_type']
-        var x_axis_array_text = ['Day Type']
+        var x_axis_array = ['X-Axis', 'day_type']
+        var x_axis_array_text = ['X-Axis', 'Day Type']
 
-        var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
+        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
+        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
       }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['Street', 'Traffic Volume Count Location  Address']
-        var x_axis_array_text = ['Street', 'Location Address']
+        var x_axis_array = ['X-Axis', 'Street', 'Traffic Volume Count Location  Address']
+        var x_axis_array_text = ['X-Axis', 'Street', 'Location Address']
 
-        var y_axis_array = ['Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Total Passing Vehicle Volume']
+        var y_axis_array = ['Y-Axis', 'Total Passing Vehicle Volume']
+        var y_axis_array_text = ['Y-Axis','Total Passing Vehicle Volume']
       }
       if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['Station Name', 'Address']
-        var x_axis_array_text = ['Station Name', 'Address']
+        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
+        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
 
-        var y_axis_array = ['Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Total Docks', 'Docks in Service']
+        var y_axis_array = ['Y-Axis','Total Docks', 'Docks in Service']
+        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
       }
   } else if(sc == 'Line'){
 
       if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['day_type']
-        var x_axis_array_text = ['Day Type']
+        var x_axis_array = ['X-Axis', 'day_type']
+        var x_axis_array_text = ['X-Axis', 'Day Type']
 
-        var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
+        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
+        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
       }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['Date of Count']
-        var x_axis_array_text = ['Date of Count']
+        var x_axis_array = ['X-Axis', 'Date of Count']
+        var x_axis_array_text = ['X-Axis', 'Date of Count']
 
-        var y_axis_array = ['Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Total Passing Vehicle Volume']
+        var y_axis_array = ['Y-Axis','Total Passing Vehicle Volume']
+        var y_axis_array_text = ['Y-Axis','Total Passing Vehicle Volume']
       }
       if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['Station Name', 'Address']
-        var x_axis_array_text = ['Station Name', 'Address']
+        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
+        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
 
-        var y_axis_array = ['Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Total Docks', 'Docks in Service']
+        var y_axis_array = ['Y-Axis', 'Total Docks', 'Docks in Service']
+        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
       }
   }else if(sc == 'Pie'){
       if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['day_type']
-        var x_axis_array_text = ['Day Type']
+        var x_axis_array = ['X-Axis', 'day_type']
+        var x_axis_array_text = ['X-Axis', 'Day Type']
 
-        var y_axis_array = ['total_rides', 'bus', 'rail_boardings']
-        var y_axis_array_text = ['Total Rides', 'Bus', 'Rail Boardings']
+        var y_axis_array = ['Y-Axis', 'total_rides', 'bus', 'rail_boardings']
+        var y_axis_array_text = ['Y-Axis', 'Total Rides', 'Bus', 'Rail Boardings']
       }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['Street', 'Traffic Volume Count Location  Address']
-        var x_axis_array_text = ['Street', 'Location Address']
+        var x_axis_array = ['X-Axis', 'Street', 'Traffic Volume Count Location  Address']
+        var x_axis_array_text = ['X-Axis', 'Street', 'Location Address']
 
-        var y_axis_array = ['Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Total Passing Vehicle Volume']
+        var y_axis_array = ['Y-Axis', 'Total Passing Vehicle Volume']
+        var y_axis_array_text = ['Y-Axis', 'Total Passing Vehicle Volume']
       }
       if(sd == 'ds6'/*Divy Stations*/){
-        var x_axis_array = ['Station Name', 'Address']
-        var x_axis_array_text = ['Station Name', 'Address']
+        var x_axis_array = ['X-Axis', 'Station Name', 'Address']
+        var x_axis_array_text = ['X-Axis', 'Station Name', 'Address']
 
-        var y_axis_array = ['Total Docks', 'Docks in Service']
-        var y_axis_array_text = ['Total Docks', 'Docks in Service']
+        var y_axis_array = ['Y-Axis', 'Total Docks', 'Docks in Service']
+        var y_axis_array_text = ['Y-Axis', 'Total Docks', 'Docks in Service']
       }
   }else if(sc == 'Pivot'){
       //pending
@@ -119,18 +120,18 @@ function showCol(){
       }
   }else if(sc == 'Stacked'){
       if(sd == 'ds1'/*Daily CTA boarding*/){
-        var x_axis_array = ['day_type']
-        var x_axis_array_text = ['Day Type']
+        var x_axis_array = ['X-Axis', 'day_type']
+        var x_axis_array_text = ['X-Axis', 'Day Type']
 
-        var y_axis_array = ['bus', 'rail_boardings']
-        var y_axis_array_text = ['Bus', 'Rail Boardings']
+        var y_axis_array = ['Y-Axis', 'bus', 'rail_boardings']
+        var y_axis_array_text = ['Y-Axis', 'Bus', 'Rail Boardings']
       }
       if(sd == 'ds4'/*Average Daily Traffic count:*/){
-        var x_axis_array = ['Street']
-        var x_axis_array_text = ['Street']
+        var x_axis_array = ['X-Axis', 'Street']
+        var x_axis_array_text = ['X-Axis', 'Street']
 
-        var y_axis_array = ['Traffic Volume Count Location  Address', 'Total Passing Vehicle Volume']
-        var y_axis_array_text = ['Location Address', 'Rail Total Passing Vehicle Volume']
+        var y_axis_array = ['Y-Axis', 'Traffic Volume Count Location  Address', 'Total Passing Vehicle Volume']
+        var y_axis_array_text = ['Y-Axis','Location Address', 'Rail Total Passing Vehicle Volume']
       }
       if(sd == 'ds6'/*Divy Stations*/){
       }
