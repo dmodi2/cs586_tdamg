@@ -21,10 +21,14 @@
 <script src="js/Bar.js"></script>
 <script src="js/Line.js"></script>
 <script src="js/Pie.js"></script>
+<script src="js/Polar.js"></script>
+<script src="js/Doughnut.js"></script>
 <script src="js/GraphFactory.js"></script>
-<script src="js/main.js"></script>
+<script src="js/Main.js"></script>
 <script src="js/chart.js"></script>
-
+<script>
+  var main = new Main()
+</script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -51,8 +55,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <select class="form-control" id="datasetSelect">
               <option selected="selected" value="crdbt">Select Dataset</option>
               <option value="ds1">CTA Daily Ridership</option>
-              <!-- <option value="ds2">Ridership by CTA bus route</option>
-              <option value="ds3">Ridership by 'L' route</option> -->
+              <option value="ds3">Ridership by 'L' route</option>
               <option value="ds4">Average daily traffic count</option>
               <option value="ds5">Red Light Camera Violations</option>
               <option value="ds6">Divy Bicycle Stations</option>
@@ -61,10 +64,10 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </div>
 
         <div class="col-md-1">
-          <button type="button" class="btn btn-primary" onClick="loadDatasetMain();">View Dataset</button>
+          <button type="button" class="btn btn-primary" onClick="main.loadDatasetMain();">View Dataset</button>
         </div>
         <div class="col-md-1" style="padding-left: 35px">
-          <button type="button" class="btn btn-primary" onClick="visualize();" >Visualize</button>
+          <button type="button" class="btn btn-primary" onClick="main.visualize();" >Visualize</button>
         </div>
       </div>
     </header>
@@ -73,12 +76,12 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="col-md-2" style="padding-left: 50px;">
         <div id="chartSelection" style="visibility: hidden; height:400px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
           <p style="font-size: large;" align: "center">Chart Type</p>
-          <select class="form-control" id="graph_type" onchange="showCol();" >
+          <select class="form-control" id="graph_type" onchange="main.showCol();" >
             <option selected="selected" value="crdbt">Select Chart Type</option>
             <option value="Bar">Bar</<option>
             <option value="Line">Line</<option>
-            <option value="Stacked">Stacked</<option>
-            <option value="Pivot">Pivot</<option>
+            <option value="Doughnut">Doughnut</<option>
+            <option value="Polar">Polar</<option>
             <option value="Pie">Pie</<option>
           </select>
           &nbsp; &nbsp;
@@ -97,22 +100,13 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
       <div>
       </br>
-      <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
+      <button type="button" class="btn btn-primary" onClick="main.plotChart();">Plot Chart</button>
     </div>
     &nbsp; &nbsp;
     <div>
 
-      <!-- .......drop down of all the columns..... -->
-      <!-- <select class="form-control" id="graph_type" onchange="showCol();" >
-        <option selected="selected" value="crdbt">Select Chart Type</option>
-        <option value="Bar">Bar</<option>
-        <option value="Line">Line</<option>
-        <option value="Stacked">Stacked</<option>
-        <option value="Pivot">Pivot</<option>
-        <option value="Pie">Pie</<option>
-      </select> -->
     </br>
-    <button type="button" class="btn btn-primary" onClick="plotStats();">Plot Stats</button>
+    <button type="button" class="btn btn-primary" onClick="main.plotStats();">Plot Stats</button>
     </div>
   </div>
 </div>

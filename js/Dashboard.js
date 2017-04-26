@@ -11,11 +11,9 @@ class Dashboard {
     var file
     if(selectDataset == 'ds1'){
       file = "data/crdbt.csv"
-    }/*else if(selectDataset == 'ds2'){
-      file = "data/CTA_Ridership_Bus_Routes.csv"
     }else if(selectDataset == 'ds3'){
       file = "data/CTA_Ridership_L_Station.csv"
-    }*/else if(selectDataset == 'ds4'){
+    }else if(selectDataset == 'ds4'){
       file = "data/Average_Daily_Traffic_Counts.csv"
     }else if(selectDataset == 'ds5'){
       file = "data/Red_Light_Camera_Violations.csv"

@@ -4,22 +4,21 @@ class GraphFactory{
     this.graphType = graphType
   }
 
-  getChartInstance(){
+  getChartInstance(file){
 
     if(this.graphType == "Bar"){
-      var graph = new Bar
+      var graph = new Bar(file)
     }else if(this.graphType == "Line"){
-      var graph = new Line
-    }else if(this.graphType == "Pivot"){
-      var graph = new Pivot
-    }else if(this.graphType == "Stacked"){
-      var graph = new Stacked
+      var graph = new Line(file)
+    }else if(this.graphType == "Polar"){
+      var graph = new Polar(file)
+    }else if(this.graphType == "Doughnut"){
+      var graph = new Doughnut(file)
     }else if(this.graphType == "Pie"){
-      var graph = new Pie
+      var graph = new Pie(file)
     }else{
       console.log("No chart selected")
     }
-
     return graph
   }
 }

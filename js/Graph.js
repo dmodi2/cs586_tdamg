@@ -1,7 +1,7 @@
 class Graph{
 
-  constructor(){
-
+  constructor(file){
+    this.file = file
   }
 
   resetCanvas(){
