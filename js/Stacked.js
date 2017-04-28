@@ -4,7 +4,7 @@ class Stacked extends Graph {
     super(file)
   }
 
-  plotGraph(x_axis, y_axis){
+  plotGraph(x_axis, y_axis, x_filter_val, xOp, y_filter_val, yOp, doFilter){
 
   document.getElementById('chartSelection').style.visibility = 'visible'
   document.getElementById('chartDiv').style.visibility = 'visible'

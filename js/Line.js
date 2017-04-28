@@ -4,7 +4,7 @@ class Line extends Graph {
     super(file)
   }
 
-	plotGraph(x_axis, y_axis){
+	plotGraph(x_axis, y_axis, x_filter_val, xOp, y_filter_val, yOp, doFilter){
 
 	document.getElementById('dataset-div').style.visibility = 'visible'
 	document.getElementById('chartSelection').style.visibility = 'visible'
@@ -16,6 +16,12 @@ class Line extends Graph {
 	df => {
       //Chart
       var selectedDf = df.select(x_axis,y_axis)
+
+			if (doFilter) {
+				var xFDf = selectedDf.filter(row => xOp(row.get(x_axis), x_filter_val))
+				selectedDf = xFDf.filter(row => yOp(row.get(y_axis), y_filter_val))
+			}
+
       var result = selectedDf.groupBy(x_axis).aggregate(group => group.stat.sum(y_axis));
 
 	  var a = result.select('aggregation').toArray()

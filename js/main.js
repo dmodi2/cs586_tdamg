@@ -56,10 +56,39 @@
   var chartFac = new GraphFactory(graphTypeValue)
   var selectedGraph = chartFac.getChartInstance(file)
   selectedGraph.resetCanvas()
-  if(graphTypeValue == 'Stacked'){
-    selectedGraph.plotGraph(x_axis_value, y_axis_array)
+
+  var x_filter = [ ]
+  var y_filter = 0
+  var x = document.getElementById("select_column_values")
+
+  if(x!=null){
+    for (var i = 0; i < x.options.length; i++) {
+      if(x.options[i].selected ==true) {
+        x_filter.push(x.options[i].value)
+      }
+    }
+    y_filter = document.getElementById('col_value').value
+
+    var operator = document.getElementById('operator')
+    var sc = operator.options[operator.selectedIndex].value
+
+    var isFilter = true
+
+    if(sc == "Dataframe.gt")
+      var filtFunc = Dataframe.gt
+    else if(sc == "Dataframe.lt")
+      var filtFunc = Dataframe.lt
+    else if(sc == "Dataframe.eq")
+      var filtFunc = Dataframe.eq
+  }
+  else {
+    var isFilter = false
+  }
+
+  if(graphTypeValue == 'Stacked') {
+    selectedGraph.plotGraph(x_axis_value, y_axis_array, 0, Dataframe.strIn, 0, Dataframe.gt, isFilter)
   }else{
-    selectedGraph.plotGraph(x_axis_value, y_axis_value)
+    selectedGraph.plotGraph(x_axis_value, y_axis_value, x_filter, Dataframe.strIn, y_filter, filtFunc, isFilter)
   }
 }
 

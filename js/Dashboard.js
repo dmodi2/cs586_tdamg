@@ -123,7 +123,7 @@ class Dashboard {
             adv_opt.appendChild(text)
             var col_value_box = document.createElement('input')
             col_value_box.setAttribute('type', 'text')
-            col_value_box.setAttribute('class', 'col_value')
+            col_value_box.setAttribute('id', 'col_value')
             adv_opt.appendChild(col_value_box)
 
             document.getElementById('adv_opt_col').style.visibility = 'visible'
@@ -134,24 +134,23 @@ class Dashboard {
             //Create and append select list
             var selectList = document.createElement("select")
             selectList.className = "form-control"
-            selectList.id = "col_value"
+            selectList.id = "operator"
             adv_opt.appendChild(selectList)
 
             var option1 = document.createElement("option")
-            option1.value = 'lt'
+            option1.value = 'Dataframe.lt'
             option1.text = 'Less Than'
             selectList.appendChild(option1)
 
             var option2 = document.createElement("option")
-            option2.value = 'eq'
+            option2.value = 'Dataframe.eq'
             option2.text = 'Equal to'
             selectList.appendChild(option2)
 
             var option3 = document.createElement("option")
-            option3.value = 'gt'
+            option3.value = 'Dataframe.gt'
             option3.text = 'Greater Than'
             selectList.appendChild(option3)
-
           }
       )
     }

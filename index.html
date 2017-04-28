@@ -72,7 +72,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div class="row">
       <div class="col-md-2" style="padding-left: 50px;">
-        <div id="chartSelection" style="visibility: hidden; height:400px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
+        <div id="chartSelection" style="visibility: hidden; height:600px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
           <p style="font-size: large;" align: "center">Chart Type</p>
           <select class="form-control" id="graph_type" onchange="showCol();" >
             <option selected="selected" value="crdbt">Select Chart Type</option>
@@ -97,18 +97,17 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
       &nbsp; &nbsp;
 
-      <div>
-      </br>
-      <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
-    </div>
-    &nbsp; &nbsp;
     <div>
-
     </br>
     <button type="button" class="btn btn-primary" onClick="showAdvanceChartOption();">Advance Options</button>
     </div>
     <div id='adv_opt_col' style="visibility: hidden;">
     </div>
+    <div>
+    </br>
+    <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
+  </div>
+  &nbsp; &nbsp;
   </div>
 </div>
 

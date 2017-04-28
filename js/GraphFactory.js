@@ -16,6 +16,8 @@ class GraphFactory{
       var graph = new Doughnut(file)
     }else if(this.graphType == "Stacked"){
       var graph = new Stacked(file)
+    }else if(this.graphType == "Pie"){
+      var graph = new Pie(file)
     }else{
       console.log("No chart selected")
     }
