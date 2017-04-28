@@ -1,11 +1,9 @@
-class Main {
-
- visualize() {
+ function visualize() {
   document.getElementById('dataset-div').style.visibility = 'visible'
   document.getElementById('chartSelection').style.visibility = 'visible'
 }
 
- loadDatasetMain(){
+ function loadDatasetMain(){
 
   var dashboard = new Dashboard()
   var selectDataset = document.getElementById('datasetSelect');
@@ -13,15 +11,27 @@ class Main {
   dashboard.loadDataset(sd)
 }
 
- plotChart() {
+ function plotChart() {
 
   //get chart param
   var graphType = document.getElementById('graph_type');
   var graphTypeValue = graphType.options[graphType.selectedIndex].value
   var x_axis = document.getElementById('x_axis');
   var x_axis_value = x_axis.options[x_axis.selectedIndex].value
-  var y_axis = document.getElementById('y_axis');
-  var y_axis_value = y_axis.options[y_axis.selectedIndex].value
+  if(graphTypeValue == 'Stacked'){
+    var y_axis_array = []
+    var selectedCol = document.getElementsByClassName('y_axis');
+    var j = 0
+    for(var i=0; selectedCol[i]; i++){
+      if(selectedCol[i].checked){
+        y_axis_array[j] = selectedCol[i].value
+        j++
+      }
+    }
+  }else{
+    var y_axis = document.getElementById('y_axis');
+    var y_axis_value = y_axis.options[y_axis.selectedIndex].value
+  }
 
   var selectDataset = document.getElementById('datasetSelect');
   var sd = selectDataset.options[selectDataset.selectedIndex].value
@@ -46,10 +56,14 @@ class Main {
   var chartFac = new GraphFactory(graphTypeValue)
   var selectedGraph = chartFac.getChartInstance(file)
   selectedGraph.resetCanvas()
-  selectedGraph.plotGraph(x_axis_value, y_axis_value)
+  if(graphTypeValue == 'Stacked'){
+    selectedGraph.plotGraph(x_axis_value, y_axis_array)
+  }else{
+    selectedGraph.plotGraph(x_axis_value, y_axis_value)
+  }
 }
 
- showCol(){
+ function showCol(){
 
   document.getElementById('x_axis_col').innerHTML = ""
   document.getElementById('y_axis_col').innerHTML = ""
@@ -79,7 +93,7 @@ class Main {
     var x_axis_array_text = ['X-Axis', 'Intersection', 'Camera Id', 'Address', 'Violation Date', 'Violations', 'X Coordinate', 'Y Coordinate', 'Latitude', 'Longitude', 'Location']
   }
   if(sd == 'ds6'/*Divy Stations*/){
-    var x_axis_array = ['X-Axis', 'ID', 'Station Name', 'Address', 'Total Docks', 'Docks in Service', 'Status', 'Latitude', 'Longitude', 'Location']
+    var x_axis_array = ['X-Axis', 'ID', 'station_name', 'Address', 'total_docks', 'docks_in_service', 'Status', 'Latitude', 'Longitude', 'Location']
     var x_axis_array_text = ['X-Axis', 'ID', 'Station Name', 'Address', 'Total Docks', 'Docks in Service', 'Status', 'Latitude', 'Longitude', 'Location']
   }
 
@@ -103,20 +117,39 @@ class Main {
         selectList.appendChild(option)
       }
 
-      var y_axis_col = document.getElementById("y_axis_col")
-      //Create and append select list
-      var selectList = document.createElement("select")
-      selectList.className = "form-control"
-      selectList.id = "y_axis"
-      y_axis_col.appendChild(selectList)
+      if(sc == 'Stacked'){
 
-      //Create and append the options
-      for (var i = 0; i < y_axis_array.length; i++) {
-        var option = document.createElement("option")
-        option.value = y_axis_array[i]
-        option.text = y_axis_array_text[i]
-        selectList.appendChild(option)
+        var y_axis_col = document.getElementById("y_axis_col")
+        var text = document.createTextNode('Y-Axis (numeric values allowed)')
+        y_axis_col.appendChild(text)
+        y_axis_col.appendChild(br)
+
+        for (var i = 1; i < y_axis_array.length; i++) {
+          var br = document.createElement('br')
+          var checkbox = document.createElement('input')
+          checkbox.setAttribute('type', 'checkbox')
+          checkbox.setAttribute('value', y_axis_array[i])
+          checkbox.setAttribute('class', 'y_axis')
+          var text1 = document.createTextNode(' ' + y_axis_array_text[i]);
+          y_axis_col.appendChild(checkbox)
+          y_axis_col.appendChild(text1)
+          y_axis_col.appendChild(br)
+        }
+      }else{
+
+        var y_axis_col = document.getElementById("y_axis_col")
+        //Create and append select list
+        var selectList = document.createElement("select")
+        selectList.className = "form-control"
+        selectList.id = "y_axis"
+        y_axis_col.appendChild(selectList)
+
+        //Create and append the options
+        for (var i = 0; i < y_axis_array.length; i++) {
+          var option = document.createElement("option")
+          option.value = y_axis_array[i]
+          option.text = y_axis_array_text[i]
+          selectList.appendChild(option)
+        }
       }
-
    }
- }

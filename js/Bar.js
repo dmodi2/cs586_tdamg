@@ -5,7 +5,7 @@ class Bar extends Graph {
   }
 
   plotGraph(x_axis, y_axis){
-    
+
   document.getElementById('chartSelection').style.visibility = 'visible'
   document.getElementById('chartDiv').style.visibility = 'visible'
 

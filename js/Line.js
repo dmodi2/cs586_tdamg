@@ -27,7 +27,7 @@ class Line extends Graph {
     }
 
 	  var ctx = document.getElementById("chartArea");
-    
+
       var myChart = new Chart(ctx, {
         type: 'line',
         options: {
