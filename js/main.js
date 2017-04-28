@@ -153,3 +153,17 @@
         }
       }
    }
+
+   function showAdvanceChartOption(){
+
+     var selectDataset = document.getElementById('datasetSelect');
+     var sd = selectDataset.options[selectDataset.selectedIndex].value
+     var x_axis = document.getElementById('x_axis');
+     var x_axis_value = x_axis.options[x_axis.selectedIndex].value
+     var y_axis = document.getElementById('y_axis');
+     var y_axis_value = y_axis.options[y_axis.selectedIndex].value
+
+     var dashboard = new Dashboard()
+     dashboard.getValueForColumns(x_axis_value, y_axis_value, sd)
+
+   }
