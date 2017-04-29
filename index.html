@@ -32,6 +32,46 @@
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 
+<script id="blockOfStuff" language="text">
+<div id="chartSelection" style="visibility: hidden; height:600px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
+  <p style="font-size: large;" align: "center">Chart Type</p>
+  <select class="form-control" id="graph_type" onchange="facade.showCol();" >
+    <option selected="selected" value="crdbt">Select Chart Type</option>
+    <option value="Bar">Bar</<option>
+    <option value="Line">Line</<option>
+    <option value="Doughnut">Doughnut</<option>
+    <option value="Polar">Polar</<option>
+    <option value="Pie">Pie</<option>
+    <option value="Stacked">Stacked</<option>
+  </select>
+  &nbsp; &nbsp;
+
+<div id='x_axis_col' style="visibility: hidden;">
+</br><label>X-axis</label></br>
+</div>
+
+&nbsp; &nbsp;
+
+<div id='y_axis_col' style="visibility: hidden;">
+</br><label>Y-axis</label></br>
+</div>
+
+&nbsp; &nbsp;
+
+<div>
+</br>
+<button type="button" class="btn btn-primary" onClick="facade.showAdvanceChartOption();">Advance Options</button>
+</div>
+<div id='adv_opt_col' style="visibility: hidden;">
+</div>
+<div>
+</br>
+<button type="button" class="btn btn-primary" onClick="facade.plotChart();">Plot Chart</button>
+</div>
+&nbsp; &nbsp;
+</div>
+</script>
+
 <script>
 var facade = new Main()
 </script>
@@ -76,45 +116,8 @@ var facade = new Main()
     </header>
 
     <div class="row">
-      <div class="col-md-2" style="padding-left: 50px;">
-        <div id="chartSelection" style="visibility: hidden; height:600px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
-          <p style="font-size: large;" align: "center">Chart Type</p>
-          <select class="form-control" id="graph_type" onchange="facade.showCol();" >
-            <option selected="selected" value="crdbt">Select Chart Type</option>
-            <option value="Bar">Bar</<option>
-            <option value="Line">Line</<option>
-            <option value="Doughnut">Doughnut</<option>
-            <option value="Polar">Polar</<option>
-            <option value="Pie">Pie</<option>
-            <option value="Stacked">Stacked</<option>
-          </select>
-          &nbsp; &nbsp;
-
-        <div id='x_axis_col' style="visibility: hidden;">
-        </br><label>X-axis</label></br>
-        </div>
-
-        &nbsp; &nbsp;
-
-      <div id='y_axis_col' style="visibility: hidden;">
-      </br><label>Y-axis</label></br>
+      <div id="chartSelectParent" class="col-md-2" style="padding-left: 50px;">
       </div>
-
-      &nbsp; &nbsp;
-
-    <div>
-    </br>
-    <button type="button" class="btn btn-primary" onClick="facade.showAdvanceChartOption();">Advance Options</button>
-    </div>
-    <div id='adv_opt_col' style="visibility: hidden;">
-    </div>
-    <div>
-    </br>
-    <button type="button" class="btn btn-primary" onClick="facade.plotChart();">Plot Chart</button>
-  </div>
-  &nbsp; &nbsp;
-  </div>
-</div>
 
 <div class="col-md-10">
   <div style="visibility: hidden;" id="dataset-div" align="center" style ="height:500px; width:100%;">

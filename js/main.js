@@ -8,6 +8,15 @@ visualize() {
 loadDatasetMain(){
 
   var dashboard = new Dashboard()
+
+  document.getElementById("chartSelectParent").innerHTML = document.getElementById('blockOfStuff').innerHTML;
+
+  $('#myChart').remove(); // this is my <canvas> element
+  $('#chartDiv').append('<div id="myChart" align="center" style ="visibility: hidden; overflow : scroll; height:100%; width:600px;"> <canvas id="chartArea"><canvas></div>');
+
+  $('#myStatshart').remove(); // this is my <canvas> element
+  $('#statsDiv').append('<div id="myStatshart" align="center" style ="visibility: hidden; overflow : scroll; height:100%; width:600px;"> <canvas id="statsChartArea"><canvas></div>');
+
   var selectDataset = document.getElementById('datasetSelect');
   var sd = selectDataset.options[selectDataset.selectedIndex].value
   dashboard.loadDataset(sd)
