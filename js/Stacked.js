@@ -5,6 +5,7 @@ class Stacked extends Graph {
   }
 
   plotGraph(x_axis, y_axis, x_filter_val, xOp, y_filter_val, yOp, doFilter){
+    var stats = new Stats()
 
   document.getElementById('chartSelection').style.visibility = 'visible'
   document.getElementById('chartDiv').style.visibility = 'visible'
@@ -107,6 +108,7 @@ class Stacked extends Graph {
 });
     }
   )
+  stats.findStats(x_axis, y_axis, x_filter_val, xOp, y_filter_val, yOp, doFilter, this.file);
 }
 
 }
