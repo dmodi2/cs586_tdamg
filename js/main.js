@@ -1,9 +1,11 @@
- function visualize() {
+class Main{
+
+visualize() {
   document.getElementById('dataset-div').style.visibility = 'visible'
   document.getElementById('chartSelection').style.visibility = 'visible'
 }
 
- function loadDatasetMain(){
+loadDatasetMain(){
 
   var dashboard = new Dashboard()
   var selectDataset = document.getElementById('datasetSelect');
@@ -11,7 +13,7 @@
   dashboard.loadDataset(sd)
 }
 
- function plotChart() {
+plotChart() {
 
   //get chart param
   var graphType = document.getElementById('graph_type');
@@ -92,7 +94,7 @@
   }
 }
 
- function showCol(){
+showCol(){
 
   document.getElementById('x_axis_col').innerHTML = ""
   document.getElementById('y_axis_col').innerHTML = ""
@@ -183,7 +185,7 @@
       }
    }
 
-   function showAdvanceChartOption(){
+   showAdvanceChartOption(){
 
      var selectDataset = document.getElementById('datasetSelect');
      var sd = selectDataset.options[selectDataset.selectedIndex].value
@@ -196,3 +198,4 @@
      dashboard.getValueForColumns(x_axis_value, y_axis_value, sd)
 
    }
+}

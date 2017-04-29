@@ -25,11 +25,15 @@
 <script src="js/Stacked.js"></script>
 <script src="js/Doughnut.js"></script>
 <script src="js/GraphFactory.js"></script>
-<script src="js/main.js"></script>
+<script src="js/Main.js"></script>
 <script src="js/chart.js"></script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+
+<script>
+var facade = new Main()
+</script>
 
 <body class="w3-light-grey">
 
@@ -62,10 +66,10 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </div>
 
         <div class="col-md-1">
-          <button type="button" class="btn btn-primary" onClick="loadDatasetMain();">View Dataset</button>
+          <button type="button" class="btn btn-primary" onClick="facade.loadDatasetMain();">View Dataset</button>
         </div>
         <div class="col-md-1" style="padding-left: 35px">
-          <button type="button" class="btn btn-primary" onClick="visualize();" >Visualize</button>
+          <button type="button" class="btn btn-primary" onClick="facade.visualize();" >Visualize</button>
         </div>
       </div>
     </header>
@@ -74,7 +78,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="col-md-2" style="padding-left: 50px;">
         <div id="chartSelection" style="visibility: hidden; height:600px; width:300px; background-color: gainsboro; padding-left: 25px; padding-right: 25px">
           <p style="font-size: large;" align: "center">Chart Type</p>
-          <select class="form-control" id="graph_type" onchange="showCol();" >
+          <select class="form-control" id="graph_type" onchange="facade.showCol();" >
             <option selected="selected" value="crdbt">Select Chart Type</option>
             <option value="Bar">Bar</<option>
             <option value="Line">Line</<option>
@@ -99,13 +103,13 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div>
     </br>
-    <button type="button" class="btn btn-primary" onClick="showAdvanceChartOption();">Advance Options</button>
+    <button type="button" class="btn btn-primary" onClick="facade.showAdvanceChartOption();">Advance Options</button>
     </div>
     <div id='adv_opt_col' style="visibility: hidden;">
     </div>
     <div>
     </br>
-    <button type="button" class="btn btn-primary" onClick="plotChart();">Plot Chart</button>
+    <button type="button" class="btn btn-primary" onClick="facade.plotChart();">Plot Chart</button>
   </div>
   &nbsp; &nbsp;
   </div>
