@@ -48,6 +48,13 @@ class Bar extends Graph {
             col_count = 0
           }
         }
+        var a = result.select('aggregation').toArray()
+        var b=[];
+    	  for (var i=0;i<a.length;i++)
+    	  {
+    			b[i] = a[i][0];
+        }
+
         var myChart = new Chart(ctx, {
           type: 'bar',
           options: {
@@ -59,7 +66,7 @@ class Bar extends Graph {
             labels: result.select(x_axis).toArray(),
             datasets: [{
               label: y_axis,
-              data: result.select('aggregation').toArray(),
+              data: b,
               backgroundColor: backgroundColorArray,
               borderColor: borderColorArray,
               borderWidth: 1
