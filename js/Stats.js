@@ -31,31 +31,21 @@ class Stats {
         // array of elements for y-axis
         var data = [min, max, mean, sd]
 
-        // var statsDiv = document.getElementById('stats')
-        // statsDiv.innerHTML += "<table style=\"width:400px\"><tr><td>Min</td><td>Max</td><td>Mean</td><td>Standard Deviation</td></tr> <tr><td>" + min + "</td><td>" +  max + "</td><td>" + mean + "</td><td>" + sd + "</td></tr></table>";
-        // var b=[];
-        // for (var i=0;i<a.length;i++)
-        // {
-        //   b[i] = a[i][0];
-        // }
-        //
-        // Create bar graph for the stats
-
         document.getElementById('statsDiv').style.visibility = 'visible'
 
         var ctx = document.getElementById("statsChartArea").getContext("2d");
         var colorArray = [
-          'rgba(255, 99, 134, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(128, 20, 8, 0.2)'
-        ]
-        var borColorArray = [
-          'rgba(255, 99, 134, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(128, 20, 8, 1)'
-        ]
+    							"#FF6384",
+    							"#36A2EB",
+    							"#FFCE56"
+          ]
+
+          var borColorArray = [
+            'rgba(255, 99, 134, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ]
+
         var col_count = 0
         var backgroundColorArray = []
         var borderColorArray = []

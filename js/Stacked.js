@@ -45,15 +45,15 @@ class Stacked extends Graph {
        }
      }
      var colorArray = [
-       'rgba(255, 99, 134, 0.2)',
-       'rgba(54, 162, 235, 0.2)',
-       'rgba(255, 206, 86, 0.2)'
-     ]
-     var borColorArray = [
-       'rgba(255, 99, 134, 1)',
-       'rgba(54, 162, 235, 1)',
-       'rgba(255, 206, 86, 1)'
-     ]
+        'rgba(255, 99, 134, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
+      ]
+      var borColorArray = [
+        'rgba(255, 99, 134, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ]
      var col_count = 0
      var backgroundColorArray = []
      var borderColorArray = []

@@ -24,16 +24,19 @@ class Bar extends Graph {
 
         var result = selectedDf.groupBy(x_axis).aggregate(group => group.stat.sum(y_axis))/*.rename(map[x_axis], map[y_axis]);*/;
         var ctx = document.getElementById("chartArea").getContext("2d");
+
         var colorArray = [
-          'rgba(255, 99, 134, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)'
-        ]
-        var borColorArray = [
-          'rgba(255, 99, 134, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)'
-        ]
+    							"#FF6384",
+    							"#36A2EB",
+    							"#FFCE56"
+          ]
+
+          var borColorArray = [
+            'rgba(255, 99, 134, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ]
+
         var col_count = 0
         var backgroundColorArray = []
         var borderColorArray = []
@@ -41,10 +44,17 @@ class Bar extends Graph {
           backgroundColorArray[i] = colorArray[col_count]
           borderColorArray[i] = borColorArray[col_count]
           col_count++
-          if(col_count == 3){
+          if(col_count == 4){
             col_count = 0
           }
         }
+        var a = result.select('aggregation').toArray()
+        var b=[];
+    	  for (var i=0;i<a.length;i++)
+    	  {
+    			b[i] = a[i][0];
+        }
+
         var myChart = new Chart(ctx, {
           type: 'bar',
           options: {
@@ -56,7 +66,7 @@ class Bar extends Graph {
             labels: result.select(x_axis).toArray(),
             datasets: [{
               label: y_axis,
-              data: result.select('aggregation').toArray(),
+              data: b,
               backgroundColor: backgroundColorArray,
               borderColor: borderColorArray,
               borderWidth: 1
